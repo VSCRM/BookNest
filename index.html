@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+		/>
+		<meta
+			name="description"
+			content="BookNest — інтернет-книгарня: каталог, пошук, кошик і особистий кабінет."
+		/>
+		<meta name="theme-color" content="#2c2416" />
+
+		<!-- ─── Security headers ──────────────────────────────────── -->
+		<!--
+      CSP notes:
+        • 'unsafe-eval' is required by Zod (zod.js uses Function() internally
+          for regex compilation).  Remove once Zod ships a CSP-safe build.
+        • 'unsafe-inline' is required by the inline SPA redirect script.
+        • worker-src is set explicitly (defaults to script-src otherwise per
+          spec) so a same-origin blob: worker — e.g. from a future feature,
+          or one a browser extension tries to inject — has somewhere
+          defined to land rather than silently inheriting whatever
+          script-src happens to allow.
+        • frame-ancestors must be delivered as an HTTP response header —
+          it is silently ignored inside a <meta> tag per the CSP spec.
+          Set  X-Frame-Options: DENY  and
+          Content-Security-Policy: frame-ancestors 'none'  on the server.
+    -->
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="
+        default-src 'self';
+        script-src  'self' 'unsafe-inline' 'unsafe-eval';
+        worker-src  'self' blob:;
+        style-src   'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src    'self' https://fonts.gstatic.com;
+        img-src     'self' data: blob: https:
+                    http://localhost:8080;
+        connect-src 'self'
+                    http://localhost:8080
+                    http://localhost:9000
+                    https://api.emailjs.com
+                    ws://localhost:5174;
+        object-src  'none';
+        base-uri    'self';
+        form-action 'self';
+      "
+		/>
+		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+		<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+		<meta
+			http-equiv="Permissions-Policy"
+			content="camera=(), microphone=(), geolocation=(), payment=()"
+		/>
+
+		<!-- ─── Favicon ───────────────────────────────────────────── -->
+		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+		<!-- ─── Font preconnect (eliminates 2–3 RTT on first load) ── -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- ─── DNS-prefetch for API origins ─────────────────────── -->
+		<link rel="dns-prefetch" href="http://localhost:8080" />
+		<link rel="dns-prefetch" href="http://localhost:9000" />
+
+		<title>BookNest</title>
+		<script type="module" crossorigin src="/BookNest/assets/index-CeuYAERy.js"></script>
+		<link rel="modulepreload" crossorigin href="/BookNest/assets/rolldown-runtime-Dd_uD5pT.js">
+		<link rel="modulepreload" crossorigin href="/BookNest/assets/vendor-react-QR0XuK_p.js">
+		<link rel="modulepreload" crossorigin href="/BookNest/assets/vendor-utils-DLiUSaf7.js">
+		<link rel="modulepreload" crossorigin href="/BookNest/assets/vendor-crypto-Br7KyZQ9.js">
+		<link rel="modulepreload" crossorigin href="/BookNest/assets/vendor-ui-Dqw5dGBk.js">
+		<link rel="stylesheet" crossorigin href="/BookNest/assets/index-FRS0Xofa.css">
+	</head>
+	<body>
+		<div id="root"></div>
+	</body>
+</html>
