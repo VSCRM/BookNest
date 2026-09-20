@@ -1,0 +1,31 @@
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	padding: 8px 16px;
+	background: var(--color-dark);
+	color: var(--color-bg);
+	border: var(--border-std);
+	cursor: pointer;
+	font-family: var(--font-mono);
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	transition: var(--transition-fast);
+	white-space: nowrap;
+	flex-shrink: 0;
+	box-sizing: border-box;
+}
+
+.btn:hover {
+	background: var(--color-accent);
+	color: var(--color-dark);
+	border-color: var(--color-dark);
+}
+
+.btn:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
+}

@@ -1,0 +1,135 @@
+.page,
+.detailPage {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 24px 16px;
+}
+.heading {
+	font-family: var(--font-serif);
+	margin-bottom: 16px;
+}
+
+.stateWrap {
+	text-align: center;
+	padding: 60px 20px;
+	color: var(--color-gray);
+}
+.empty {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	padding: 80px 20px;
+	color: var(--color-gray);
+}
+.browseLink {
+	color: var(--color-primary, #a64b2a);
+	font-weight: 700;
+}
+
+.list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.row {
+	display: grid;
+	grid-template-columns: 1fr auto auto auto;
+	align-items: center;
+	gap: 14px;
+	padding: 14px;
+	border: 1px solid var(--color-border, #ddd);
+}
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+.number {
+	font-weight: 700;
+}
+.meta {
+	font-size: 12px;
+	color: var(--color-gray);
+}
+
+.status {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	padding: 3px 8px;
+	border: 1px solid currentColor;
+	white-space: nowrap;
+}
+.status[data-status="confirmed"] {
+	color: #2e7d6b;
+}
+.status[data-status="pending"] {
+	color: #a67c00;
+}
+
+.total {
+	font-family: var(--font-mono);
+	font-weight: 700;
+	white-space: nowrap;
+}
+.detailsBtn {
+	padding: 6px 14px;
+	border: 1px solid var(--color-dark);
+	font-size: 13px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.backLink {
+	display: inline-block;
+	margin-bottom: 16px;
+	font-weight: 700;
+}
+.orderDate {
+	color: var(--color-gray);
+	font-size: 13px;
+	margin: 6px 0 20px;
+}
+
+.detailList {
+	list-style: none;
+	margin: 0 0 20px;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.detailRow {
+	display: grid;
+	grid-template-columns: 48px 1fr auto;
+	align-items: center;
+	gap: 12px;
+}
+.detailCover {
+	width: 48px;
+	height: 68px;
+	object-fit: cover;
+}
+.title {
+	font-weight: 700;
+}
+
+.grandTotal {
+	text-align: right;
+	font-family: var(--font-serif);
+	font-size: 20px;
+	font-weight: 700;
+	padding-top: 14px;
+	border-top: 2px solid var(--color-dark);
+}
+
+@media (max-width: 600px) {
+	.row {
+		grid-template-columns: 1fr auto;
+		grid-template-areas: "info status" "total details";
+	}
+}

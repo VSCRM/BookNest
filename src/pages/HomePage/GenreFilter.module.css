@@ -1,0 +1,35 @@
+.wrap {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	flex: 1;
+}
+
+.btn {
+	padding: 8px 16px;
+	background: var(--color-dark);
+	color: var(--color-bg);
+	border: var(--border-std);
+	cursor: pointer;
+	font-family: var(--font-mono);
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: var(--transition-fast);
+	letter-spacing: 0.5px;
+}
+
+.btn:hover {
+	background: var(--color-accent);
+	color: var(--color-dark);
+}
+
+.btnActive {
+	background: var(--color-accent);
+	color: var(--color-dark);
+}
+
+.btnActive:hover {
+	background: var(--color-accent-dim);
+	color: var(--color-dark);
+}

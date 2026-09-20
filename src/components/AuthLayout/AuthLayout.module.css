@@ -1,0 +1,18 @@
+.container {
+	max-width: 450px;
+	margin: 40px auto;
+	padding: 30px;
+	background: var(--color-white);
+	border: 3px solid var(--color-dark);
+	box-shadow: var(--shadow-card-lg);
+	animation: fadeIn 0.3s ease;
+}
+
+.title {
+	text-align: center;
+	margin-bottom: 25px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border-bottom: 2px solid var(--color-border-light);
+	padding-bottom: 10px;
+}

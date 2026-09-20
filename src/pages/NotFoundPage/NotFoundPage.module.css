@@ -1,0 +1,124 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: var(--space-8) var(--space-4);
+	min-height: 50vh;
+}
+
+.shelf {
+	position: relative;
+	width: 220px;
+	height: 140px;
+	margin-bottom: var(--space-6);
+}
+
+.book {
+	position: absolute;
+	bottom: 18px;
+	left: 50%;
+	width: 34px;
+	height: 90px;
+	border: var(--border-std);
+	border-radius: 3px 3px 1px 1px;
+	transform-origin: bottom center;
+	animation: tumble 2.6s ease-in-out infinite;
+	box-shadow: 3px 3px 0 var(--color-accent);
+}
+
+.book:nth-child(1) {
+	background: var(--color-accent);
+	left: 30%;
+	animation-delay: 0s;
+}
+
+.book:nth-child(2) {
+	background: var(--color-dark);
+	left: 50%;
+	height: 100px;
+	animation-delay: 0.25s;
+}
+
+.book:nth-child(3) {
+	background: var(--color-accent-dim);
+	left: 70%;
+	animation-delay: 0.5s;
+}
+
+.plank {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 10px;
+	background: var(--color-dark);
+	border-radius: 2px;
+}
+
+@keyframes tumble {
+	0%,
+	100% {
+		transform: translateX(-50%) rotate(0deg) translateY(0);
+	}
+	20% {
+		transform: translateX(-50%) rotate(-14deg) translateY(-4px);
+	}
+	40% {
+		transform: translateX(-50%) rotate(10deg) translateY(2px);
+	}
+	60% {
+		transform: translateX(-50%) rotate(-6deg) translateY(-2px);
+	}
+	80% {
+		transform: translateX(-50%) rotate(4deg) translateY(1px);
+	}
+}
+
+.code {
+	font-family: var(--font-mono);
+	font-size: 15px;
+	letter-spacing: 4px;
+	color: var(--color-accent-dim);
+	margin-bottom: var(--space-2);
+}
+
+.title {
+	font-family: var(--font-display);
+	font-size: 28px;
+	color: var(--color-dark);
+	margin: 0 0 var(--space-2);
+}
+
+.subtitle {
+	font-family: var(--font-body);
+	color: var(--color-gray);
+	margin: 0 0 var(--space-6);
+	max-width: 420px;
+}
+
+.homeLink {
+	display: inline-block;
+	padding: var(--space-3) var(--space-6);
+	font-family: var(--font-mono);
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: var(--color-dark);
+	background: var(--color-accent);
+	border: var(--border-std);
+	box-shadow: var(--shadow-card);
+	text-decoration: none;
+	transition: var(--transition);
+}
+
+.homeLink:hover {
+	transform: translate(-2px, -2px);
+	box-shadow: 8px 8px 0 var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.book {
+		animation: none;
+	}
+}

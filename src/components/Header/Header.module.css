@@ -1,0 +1,129 @@
+.header {
+	background: var(--color-dark);
+	color: var(--color-bg);
+	border-bottom: 4px double var(--color-accent);
+}
+
+.topBar {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px 20px;
+	font-size: 11px;
+	border-bottom: 1px solid var(--color-dark-border);
+	font-family: var(--font-mono);
+	text-transform: uppercase;
+}
+
+.topBarItem {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px 20px;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	cursor: pointer;
+	flex-shrink: 0;
+	border: none;
+	background: none;
+	color: var(--color-bg);
+	padding: 0;
+}
+
+.logoImg {
+	height: 105px;
+	width: auto;
+	object-fit: contain;
+	display: block;
+}
+
+.logoTitle {
+	font-size: clamp(20px, 5vw, 32px);
+	font-weight: 900;
+	margin: 0;
+	letter-spacing: 2px;
+	font-family: var(--font-display);
+}
+
+.nav {
+	display: flex;
+	border-top: 1px solid var(--color-dark-border);
+	padding: 0 10px;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+.nav::-webkit-scrollbar {
+	display: none;
+}
+
+.navLink {
+	color: var(--color-bg);
+	padding: 12px 24px;
+	font-family: var(--font-mono);
+	text-transform: uppercase;
+	border-right: 1px solid var(--color-dark-border);
+	font-weight: 600;
+	text-decoration: none;
+	font-size: 13px;
+	transition: var(--transition-fast);
+}
+
+.navLink:hover {
+	background: rgba(212, 165, 116, 0.2);
+}
+
+.navLinkActive {
+	background: var(--color-accent);
+	color: var(--color-dark);
+}
+
+.cartLinkContent {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+}
+
+.cartBadge {
+	position: absolute;
+	top: -8px;
+	right: -10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--color-accent, #d4a574);
+	color: var(--color-dark, #2c2416);
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	height: 16px;
+	min-width: 16px;
+	padding: 0 4px;
+	border-radius: 999px;
+	text-align: center;
+}
+
+@media (max-width: 600px) {
+	.topBar {
+		flex-direction: column;
+		align-items: center;
+		gap: 4px;
+	}
+	.main {
+		flex-direction: column;
+		text-align: center;
+		gap: 15px;
+	}
+	.navLink {
+		padding: 12px 16px;
+	}
+}

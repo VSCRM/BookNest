@@ -1,0 +1,45 @@
+.card {
+	background: var(--color-white);
+	padding: 30px;
+	border: var(--border-std);
+	box-shadow: var(--shadow-card);
+}
+
+.savedSection {
+	margin-top: 40px;
+}
+
+.savedTitle {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	border-bottom: var(--border-std);
+	padding-bottom: 10px;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	font-family: var(--font-mono);
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.logoutBtn {
+	margin-top: 24px;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 10px 20px;
+	background: none;
+	border: 2px solid var(--color-error);
+	color: var(--color-error);
+	cursor: pointer;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: var(--transition-fast);
+}
+
+.logoutBtn:hover {
+	background: var(--color-error);
+	color: #fff;
+}

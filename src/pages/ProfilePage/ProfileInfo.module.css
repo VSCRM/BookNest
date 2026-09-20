@@ -1,0 +1,61 @@
+.wrap {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.avatar {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: var(--color-dark);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-accent);
+	font-size: 32px;
+	font-family: var(--font-display);
+	font-weight: 900;
+	flex-shrink: 0;
+	border: 3px solid var(--color-accent);
+	text-transform: uppercase;
+}
+
+.details {
+	flex: 1;
+}
+
+.nickname {
+	font-size: 24px;
+	margin: 0 0 4px;
+	text-transform: uppercase;
+}
+
+.username {
+	color: var(--color-gray);
+	font-family: var(--font-mono);
+	font-size: 13px;
+	margin: 0;
+}
+
+.editBtn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 9px 18px;
+	background: none;
+	border: var(--border-std);
+	cursor: pointer;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: var(--transition-fast);
+	color: var(--color-dark);
+}
+
+.editBtn:hover {
+	background: var(--color-accent);
+	color: var(--color-dark);
+}

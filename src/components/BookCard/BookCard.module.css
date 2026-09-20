@@ -1,0 +1,231 @@
+.card {
+	background: rgba(255, 255, 255, 0.9);
+	border: var(--border-std);
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	transition:
+		transform 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+.card:hover {
+	transform: translate(-2px, -2px);
+	box-shadow: 6px 6px 0 var(--color-accent);
+}
+
+.cardFeatured {
+	grid-column: 1 / -1;
+	background: rgba(255, 255, 255, 0.9);
+	border: var(--border-featured);
+	padding: clamp(16px, 4vw, 24px);
+	margin-bottom: 16px;
+	display: flex;
+	flex-direction: column;
+}
+
+.imageWrap {
+	width: 100%;
+	height: 220px;
+	margin-bottom: 16px;
+	border: var(--border-std);
+	overflow: hidden;
+}
+
+.imageWrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.card:hover .imageWrap img,
+.cardFeatured:hover .imageWrap img {
+	transform: scale(1.03);
+}
+
+.meta {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 12px;
+	margin-bottom: 8px;
+	font-size: 12px;
+	color: var(--color-gray);
+}
+
+/* .badge is unused — genre badges render through the shared <Badge>
+   component (components/ui/Badge.tsx) so the style is identical on every
+   page (catalog cards and the book detail page both use it). */
+
+.clockItem {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	flex: 1 1 auto;
+	min-width: 0;
+}
+.clockItem svg {
+	flex-shrink: 0;
+}
+.authorText {
+	flex: 1 1 auto;
+	min-width: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.year {
+	flex-shrink: 0;
+	font-family: var(--font-mono);
+	font-size: 11px;
+	color: var(--color-gray);
+	white-space: nowrap;
+}
+
+.price {
+	flex-shrink: 0;
+	white-space: nowrap;
+	font-family: var(--font-mono);
+	font-weight: 700;
+	color: var(--color-dark);
+}
+
+.title {
+	margin: 12px 0;
+}
+
+.description {
+	flex-grow: 1;
+	font-size: 14px;
+	color: var(--color-gray);
+}
+
+.actions {
+	margin-top: auto;
+	padding-top: 15px;
+}
+
+.actionsRow {
+	margin-top: auto;
+	padding-top: 15px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.actionsRow .actions {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.addToCartWrap {
+	position: relative;
+	display: inline-flex;
+}
+
+.btnAddToCart {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 16px;
+	background: var(--color-primary, #a64b2a);
+	color: #fff;
+	border: none;
+	font-size: 13px;
+	font-weight: 700;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.btnAddToCart:hover {
+	filter: brightness(1.1);
+}
+.btnAddToCart:disabled {
+	background: var(--color-gray);
+	cursor: not-allowed;
+}
+
+.priceTooltip {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translate(-50%, 4px);
+	margin-bottom: 8px;
+	padding: 4px 10px;
+	background: var(--color-dark, #3a2f28);
+	color: #fff;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	font-weight: 700;
+	white-space: nowrap;
+	pointer-events: none;
+	opacity: 0;
+	transition:
+		opacity 0.15s ease,
+		transform 0.15s ease;
+	z-index: 1;
+}
+.priceTooltip::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 5px solid transparent;
+	border-top-color: var(--color-dark, #3a2f28);
+}
+.addToCartWrap:hover .priceTooltip {
+	opacity: 1;
+	transform: translate(-50%, 0);
+}
+
+.btnSave {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 16px;
+	background: var(--color-dark);
+	color: var(--color-bg);
+	border: var(--border-std);
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 12px;
+	font-family: var(--font-mono);
+	transition: var(--transition-fast);
+}
+
+.btnSave:hover {
+	background: var(--color-accent);
+	color: var(--color-dark);
+}
+
+.btnSaved {
+	background: var(--color-accent);
+	color: var(--color-dark);
+}
+
+.btnSaved:hover {
+	background: var(--color-error);
+	color: var(--color-white);
+	border-color: var(--color-error);
+}
+
+.cardLink {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	flex: 1;
+}
+
+.cardLink:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+	.cardFeatured {
+		grid-column: auto;
+	}
+}

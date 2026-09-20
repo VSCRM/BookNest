@@ -1,0 +1,65 @@
+.form {
+	margin-top: 20px;
+	padding: 20px;
+	background: var(--color-bg);
+	border: var(--border-std);
+}
+
+.title {
+	font-family: var(--font-mono);
+	text-transform: uppercase;
+	font-size: 13px;
+	margin-bottom: 16px;
+	letter-spacing: 1px;
+}
+
+.btnRow {
+	display: flex;
+	gap: 10px;
+	margin-top: 16px;
+	flex-wrap: wrap;
+}
+
+.btn {
+	padding: 10px 20px;
+	border: var(--border-std);
+	cursor: pointer;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: var(--transition-fast);
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.btnSave {
+	background: var(--color-dark);
+	color: var(--color-bg);
+}
+
+.btnSave:hover:not(:disabled) {
+	background: var(--color-accent);
+	color: var(--color-dark);
+}
+
+.btnSave:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.btnCancel {
+	background: none;
+	color: var(--color-dark);
+}
+
+.btnCancel:hover {
+	background: var(--color-error);
+	color: var(--color-white);
+	border-color: var(--color-error);
+}
+
+.spinner {
+	animation: spin 1s linear infinite;
+}

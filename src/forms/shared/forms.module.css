@@ -1,0 +1,190 @@
+/* ── Shared form field styles ──────────────────────────── */
+.field {
+	margin-bottom: 15px;
+}
+
+.label {
+	display: block;
+	font-family: var(--font-mono);
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: var(--color-gray);
+	margin-bottom: 5px;
+}
+
+.input {
+	width: 100%;
+	padding: 12px;
+	border: var(--border-std);
+	background: var(--color-bg);
+	font-family: var(--font-mono);
+	font-size: 13px;
+	outline: none;
+	transition: var(--transition-fast);
+}
+
+.input:focus {
+	border-color: var(--color-accent);
+}
+
+.inputError {
+	border-color: var(--color-error);
+}
+
+.errorMsg {
+	color: var(--color-error);
+	font-size: 11px;
+	margin-top: 4px;
+	display: block;
+}
+
+.passwordWrap {
+	position: relative;
+}
+
+/* Input inside a password wrapper needs extra right padding so text
+   never slides behind the toggle button. */
+.passwordWrap .input {
+	padding-right: 42px;
+}
+
+.eyeBtn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 40px;
+	background: none;
+	border: none;
+	border-left: 1px solid var(--color-border-light, #ddd);
+	cursor: pointer;
+	color: var(--color-gray);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transition-fast);
+}
+
+.eyeBtn:hover {
+	color: var(--color-dark);
+	background: var(--color-bg);
+}
+
+.submitBtn {
+	width: 100%;
+	padding: 12px;
+	background: var(--color-dark);
+	color: var(--color-bg);
+	border: var(--border-std);
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-family: var(--font-mono);
+	letter-spacing: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	transition: var(--transition-fast);
+}
+
+.submitBtn:hover:not(:disabled) {
+	background: var(--color-accent);
+	color: var(--color-dark);
+}
+
+.submitBtn:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.spinner {
+	animation: spin 1s linear infinite;
+}
+
+.formError {
+	color: var(--color-white);
+	background: var(--color-error);
+	padding: 10px;
+	margin-bottom: 15px;
+	font-size: 13px;
+	text-align: center;
+	border: var(--border-std);
+	font-family: var(--font-mono);
+}
+
+.formFooter {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 13px;
+	font-family: var(--font-mono);
+}
+
+.footerLink {
+	color: var(--color-dark);
+	text-decoration: underline;
+	transition: var(--transition-fast);
+}
+
+.footerLink:hover {
+	color: var(--color-accent);
+}
+
+.footerSecondary {
+	color: var(--color-gray);
+	font-size: 12px;
+	text-decoration: none;
+	transition: var(--transition-fast);
+}
+
+.footerSecondary:hover {
+	color: var(--color-accent);
+}
+
+/* ── Google login button (styles ready for backend integration) ── */
+.googleDivider {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 18px 0;
+	color: var(--color-gray);
+	font-family: var(--font-mono);
+	font-size: 12px;
+}
+
+.googleDivider::before,
+.googleDivider::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--color-dark);
+	opacity: 0.2;
+}
+
+.googleBtn {
+	width: 100%;
+	padding: 11px;
+	background: var(--color-white);
+	color: var(--color-dark);
+	border: var(--border-std);
+	cursor: pointer;
+	font-family: var(--font-mono);
+	font-size: 13px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	transition: var(--transition-fast);
+}
+
+.googleBtn:hover:not(:disabled) {
+	background: var(--color-bg);
+	border-color: var(--color-accent);
+}
+
+.googleBtn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}

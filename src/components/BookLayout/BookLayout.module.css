@@ -1,0 +1,26 @@
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	animation: fadeIn 0.3s ease;
+}
+
+.backBtn {
+	background: none;
+	border: none;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	cursor: pointer;
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: var(--color-dark);
+	text-transform: uppercase;
+	font-size: 12px;
+	font-family: var(--font-mono);
+	padding: 0;
+	transition: var(--transition-fast);
+}
+
+.backBtn:hover {
+	color: var(--color-accent);
+}

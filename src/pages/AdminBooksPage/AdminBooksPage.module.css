@@ -1,0 +1,321 @@
+.card {
+	background: var(--color-white);
+	padding: 30px;
+	border: var(--border-std);
+	box-shadow: var(--shadow-card);
+	margin-bottom: 30px;
+}
+
+.headingRow {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+}
+
+.heading {
+	font-family: var(--font-mono);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 20px;
+	margin: 0 0 6px;
+}
+
+.subheading {
+	color: var(--color-gray);
+	font-size: 13px;
+	margin: 0;
+}
+
+.addBtn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 10px 18px;
+	background: var(--color-dark);
+	color: var(--color-bg);
+	border: var(--border-std);
+	cursor: pointer;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	white-space: nowrap;
+	transition: var(--transition-fast);
+}
+
+.addBtn:hover {
+	background: var(--color-accent);
+	color: var(--color-dark);
+}
+
+/* ── Book list ─────────────────────────────────────────── */
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 14px 0;
+	border-bottom: 1px solid var(--color-border-light, #ddd);
+}
+
+.row:last-child {
+	border-bottom: none;
+}
+
+.thumb {
+	width: 44px;
+	height: 60px;
+	object-fit: cover;
+	border: var(--border-std);
+	background: var(--color-bg);
+	flex-shrink: 0;
+}
+
+.thumbPlaceholder {
+	width: 44px;
+	height: 60px;
+	border: var(--border-std);
+	background: var(--color-bg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-gray);
+	flex-shrink: 0;
+}
+
+.rowInfo {
+	flex: 1;
+	min-width: 0;
+}
+
+.rowTitle {
+	font-weight: 600;
+	font-size: 14px;
+	margin: 0 0 2px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.rowMeta {
+	font-size: 12px;
+	color: var(--color-gray);
+	font-family: var(--font-mono);
+}
+
+.rowActions {
+	display: flex;
+	gap: 8px;
+	flex-shrink: 0;
+}
+
+.iconBtn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	background: none;
+	border: var(--border-std);
+	cursor: pointer;
+	color: var(--color-dark);
+	transition: var(--transition-fast);
+}
+
+.iconBtn:hover {
+	background: var(--color-bg);
+	border-color: var(--color-accent);
+}
+
+.iconBtnDanger:hover {
+	background: var(--color-error);
+	color: #fff;
+	border-color: var(--color-error);
+}
+
+.emptyState {
+	color: var(--color-gray);
+	font-size: 13px;
+	padding: 20px 0;
+	text-align: center;
+}
+
+/* ── Form ──────────────────────────────────────────────── */
+
+.sectionLabel {
+	font-family: var(--font-mono);
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--color-accent);
+	border-bottom: 1px solid var(--color-border-light, #ddd);
+	padding-bottom: 6px;
+	margin: 20px 0 14px;
+}
+
+.sectionLabel:first-child {
+	margin-top: 0;
+}
+
+.langGrid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0 20px;
+}
+
+@media (max-width: 640px) {
+	.langGrid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.numberGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0 16px;
+}
+
+@media (max-width: 640px) {
+	.numberGrid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.textarea {
+	width: 100%;
+	padding: 12px;
+	border: var(--border-std);
+	background: var(--color-bg);
+	font-family: var(--font-mono);
+	font-size: 13px;
+	outline: none;
+	resize: vertical;
+	min-height: 80px;
+	transition: var(--transition-fast);
+}
+
+.textarea:focus {
+	border-color: var(--color-accent);
+}
+
+/* ── Cover upload ──────────────────────────────────────── */
+
+.coverRow {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 15px;
+}
+
+.coverPreview {
+	width: 90px;
+	height: 120px;
+	object-fit: cover;
+	border: var(--border-std);
+	background: var(--color-bg);
+	flex-shrink: 0;
+}
+
+.coverPlaceholder {
+	width: 90px;
+	height: 120px;
+	border: 2px dashed var(--color-border-light, #ccc);
+	background: var(--color-bg);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	color: var(--color-gray);
+	flex-shrink: 0;
+	text-align: center;
+	font-size: 10px;
+	font-family: var(--font-mono);
+	padding: 4px;
+}
+
+.coverControls {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.coverBtnRow {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.uploadBtn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 9px 14px;
+	background: var(--color-white);
+	border: var(--border-std);
+	cursor: pointer;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	transition: var(--transition-fast);
+}
+
+.uploadBtn:hover {
+	border-color: var(--color-accent);
+}
+
+.removeCoverBtn {
+	composes: uploadBtn;
+	border-color: var(--color-error);
+	color: var(--color-error);
+}
+
+.removeCoverBtn:hover {
+	background: var(--color-error);
+	color: #fff;
+}
+
+.hiddenFileInput {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+}
+
+.formActions {
+	display: flex;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.formActions .submitBtn {
+	flex: 1;
+}
+
+.cancelBtn {
+	padding: 12px 20px;
+	background: none;
+	border: var(--border-std);
+	cursor: pointer;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: var(--transition-fast);
+}
+
+.cancelBtn:hover {
+	background: var(--color-bg);
+}

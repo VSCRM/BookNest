@@ -1,0 +1,95 @@
+# =============================================================================
+# BookNest storefront — .gitignore
+# Vite + React 19 + TypeScript 6 + Vitest
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------------------
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# ---------------------------------------------------------------------------
+# Build output
+# ---------------------------------------------------------------------------
+dist/
+dist-ssr/
+build/
+*.local
+
+# Vite's internal dependency-pre-bundling cache — always safe to delete/regenerate
+.vite/
+node_modules/.vite/
+
+# TypeScript incremental build info (tsc --build)
+*.tsbuildinfo
+
+# ---------------------------------------------------------------------------
+# Environment variables
+# ---------------------------------------------------------------------------
+# NOTE: `.env` and `.env.production` are committed ON PURPOSE in this repo —
+# they only hold local/demo defaults (mock mode, localhost backend ports,
+# and EmailJS keys that are meant to be public-side). Do NOT add them here.
+# Only machine-specific overrides that must never be shared are ignored:
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+
+# ---------------------------------------------------------------------------
+# Testing / coverage
+# ---------------------------------------------------------------------------
+coverage/
+*.lcov
+.nyc_output/
+
+# ---------------------------------------------------------------------------
+# Logs
+# ---------------------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ---------------------------------------------------------------------------
+# Editor / IDE
+# ---------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*~
+
+# ---------------------------------------------------------------------------
+# OS-generated files
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ---------------------------------------------------------------------------
+# Package manager / tooling caches
+# ---------------------------------------------------------------------------
+.npm/
+.eslintcache
+.stylelintcache
+
+# ---------------------------------------------------------------------------
+# GitHub Pages deploy tooling (gh-pages package writes a local cache folder)
+# ---------------------------------------------------------------------------
+.cache/

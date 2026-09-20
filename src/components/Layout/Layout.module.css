@@ -1,0 +1,38 @@
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: #fcfaf7;
+}
+
+.main {
+	flex: 1;
+	padding: 40px 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+	animation: fadeIn 0.3s ease;
+}
+
+.footer {
+	text-align: center;
+	padding: 30px;
+	background: var(--color-dark);
+	color: var(--color-bg);
+	border-top: 4px solid var(--color-accent);
+	margin-top: 50px;
+}
+
+.footerTitle {
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin: 0;
+	font-family: var(--font-mono);
+	text-transform: uppercase;
+}
+
+.footerSub {
+	font-size: 13px;
+	opacity: 0.8;
+	margin-top: 5px;
+}
