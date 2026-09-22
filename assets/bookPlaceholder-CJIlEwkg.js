@@ -1,0 +1,1 @@
+var e=`/BookNest/assets/book-placeholder-CtGvfy_Z.png`;export{e as t};
