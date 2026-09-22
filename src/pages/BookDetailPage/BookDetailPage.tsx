@@ -1,4 +1,5 @@
 import {useBookDetail} from "../../hooks/useBookDetail";
+import {BOOK_COVER_PLACEHOLDER} from "../../constants/bookPlaceholder";
 import {DetailLoading} from "./DetailLoading";
 import {DetailNotFound} from "./DetailNotFound";
 import {SaveButton} from "./SaveButton";
@@ -17,10 +18,7 @@ export function BookDetailPage(): React.ReactElement {
 	return (
 		<BookLayout>
 			<img
-				src={
-					book.coverImageUrl ??
-					"https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&auto=format&fit=crop"
-				}
+				src={book.coverImageUrl ?? BOOK_COVER_PLACEHOLDER}
 				alt={book.title}
 				className={styles.heroImg}
 			/>

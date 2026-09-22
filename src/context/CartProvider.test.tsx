@@ -79,9 +79,28 @@ describe("CartProvider", () => {
 		});
 	});
 
-	it("renders children without crashing", () => {
-		renderProvider(<p>Child content</p>);
+	it("renders children without crashing", async () => {
+		let capturedContext: CartContextValue | undefined;
+		const ContextInspector = (): null => {
+			capturedContext = useCart();
+			return null;
+		};
+
+		renderProvider(
+			<>
+				<p>Child content</p>
+				<ContextInspector />
+			</>,
+		);
 		expect(screen.getByText("Child content")).toBeInTheDocument();
+
+		// Let the provider's initial cart fetch resolve inside act() before
+		// the test ends, otherwise the resulting state update lands after
+		// this test has already finished and React warns that it wasn't
+		// wrapped in act(...).
+		await waitFor(() => {
+			expect(capturedContext?.loading).toBe(false);
+		});
 	});
 
 	it("starts in a loading state before the initial fetch resolves", async () => {

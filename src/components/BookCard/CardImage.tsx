@@ -10,10 +10,10 @@
  *   we don't know which card is first here, we rely on the browser's default
  *   heuristic.
  */
+import {BOOK_COVER_PLACEHOLDER} from "../../constants/bookPlaceholder";
 import styles from "./BookCard.module.css";
 
-const FALLBACK =
-	"https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop";
+const FALLBACK = BOOK_COVER_PLACEHOLDER;
 
 interface CardImageProps {
 	src?: string;

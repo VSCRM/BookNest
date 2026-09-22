@@ -556,6 +556,9 @@ Frontend/
 │   └── favicon.svg                           # Tab icon
 │
 ├── src/
+│   ├── assets/
+│   │   └── book-placeholder.png              # Default cover shown when a book has none
+│   │
 │   ├── components/                           # Reusable, presentation-focused UI pieces
 │   │   ├── AuthLayout/
 │   │   │   ├── AuthLayout.module.css
@@ -599,6 +602,9 @@ Frontend/
 │   │       ├── Spinner.test.tsx
 │   │       ├── Spinner.tsx
 │   │       └── VisuallyHidden.tsx            # Screen-reader-only text helper
+│   │
+│   ├── constants/
+│   │   └── bookPlaceholder.ts                # Shared default-cover constant (→ assets/book-placeholder.png)
 │   │
 │   ├── context/                              # React Context providers + their local helpers
 │   │   ├── authContext.ts                    # createContext<AuthContextValue>

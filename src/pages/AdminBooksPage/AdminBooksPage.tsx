@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import {useLocale} from "../../i18n/LocaleContext";
 import {useAdminBooksPage} from "../../hooks/useAdminBooksPage";
+import {BOOK_COVER_PLACEHOLDER} from "../../constants/bookPlaceholder";
 import {FormInput} from "../../forms/shared/FormInput";
 import {Toast} from "../../components/Toast/Toast";
 import {Spinner} from "../../components/ui/Spinner";
@@ -162,7 +163,11 @@ export function AdminBooksPage(): React.ReactElement {
 								/>
 							) : (
 								<div className={styles.coverPlaceholder}>
-									<BookImage size={22} aria-hidden="true" />
+									<img
+										src={BOOK_COVER_PLACEHOLDER}
+										alt=""
+										className={styles.coverPlaceholderImg}
+									/>
 									<span>{t.admin.coverPlaceholderHint}</span>
 								</div>
 							)}

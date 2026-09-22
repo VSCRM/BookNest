@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {Link, useParams} from "react-router";
 import {orderService} from "../../services/orderService";
 import {useLocale} from "../../i18n/LocaleContext";
+import {BOOK_COVER_PLACEHOLDER} from "../../constants/bookPlaceholder";
 import {Spinner} from "../../components/ui/Spinner";
 import type {OrderDetail} from "../../schemas";
 import styles from "./OrdersPage.module.css";
@@ -59,10 +60,7 @@ export function OrderDetailPage(): React.ReactElement {
 				{order.items.map((item) => (
 					<li key={item.bookId} className={styles.detailRow}>
 						<img
-							src={
-								item.coverImageUrl ??
-								"https://placehold.co/60x90/EBD9B4/3A2F28"
-							}
+							src={item.coverImageUrl ?? BOOK_COVER_PLACEHOLDER}
 							alt={item.title}
 							className={styles.detailCover}
 						/>

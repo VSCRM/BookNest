@@ -12,7 +12,14 @@
  *   <button onClick={() => setLocale('en')}>EN</button>
  */
 
-import {createContext, useContext, useState, useCallback, type ReactNode} from "react";
+import {
+	createContext,
+	useContext,
+	useState,
+	useCallback,
+	useEffect,
+	type ReactNode,
+} from "react";
 import {
 	TRANSLATIONS,
 	LOCALE_STORAGE_KEY,
@@ -44,6 +51,23 @@ function readStoredLocale(): Locale {
 	return DEFAULT_LOCALE;
 }
 
+/**
+ * Keeps `<html lang="...">` in sync with the active locale.
+ *
+ * Native form controls — most notably `<input type="date">` — take their
+ * calendar/placeholder localisation (day/month/year order, month names,
+ * "dd.mm.yyyy" vs "mm/dd/yyyy" formatting) from the document's `lang`
+ * attribute, not from our own i18n context. Without this, `index.html`'s
+ * hardcoded `lang="uk"` never changes, so switching the app to English
+ * leaves every native date field's placeholder in Ukrainian even though
+ * the rest of the UI text updates correctly.
+ */
+function applyDocumentLang(locale: Locale): void {
+	if (typeof document !== "undefined") {
+		document.documentElement.lang = locale;
+	}
+}
+
 interface LocaleProviderProps {
 	children: ReactNode;
 }
@@ -52,12 +76,20 @@ interface LocaleProviderProps {
 export function LocaleProvider({children}: LocaleProviderProps): React.ReactElement {
 	const [locale, setLocaleState] = useState<Locale>(readStoredLocale);
 
+	// Sync on mount too: the stored/default locale may already differ from
+	// index.html's static `lang="uk"` (e.g. a returning user whose choice
+	// was persisted to localStorage as "en").
+	useEffect(() => {
+		applyDocumentLang(locale);
+	}, [locale]);
+
 	const setLocale = useCallback((newLocale: Locale): void => {
 		try {
 			localStorage.setItem(LOCALE_STORAGE_KEY, newLocale);
 		} catch {
 			// ignore if storage is unavailable
 		}
+		applyDocumentLang(newLocale);
 		setLocaleState(newLocale);
 	}, []);
 

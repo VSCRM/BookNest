@@ -4,6 +4,7 @@ import {ShoppingBag, Minus, Plus, Trash2} from "lucide-react";
 import {useCart} from "../../hooks/useCart";
 import {useAuth} from "../../hooks/useAuth";
 import {useLocale} from "../../i18n/LocaleContext";
+import {BOOK_COVER_PLACEHOLDER} from "../../constants/bookPlaceholder";
 import {orderService} from "../../services/orderService";
 import {ApiError} from "../../services/api";
 import {Spinner} from "../../components/ui/Spinner";
@@ -196,10 +197,7 @@ export function CartPage(): React.ReactElement {
 				{cart.items.map((item) => (
 					<li key={item.bookId} className={styles.row}>
 						<img
-							src={
-								item.coverImageUrl ??
-								"https://placehold.co/80x120/EBD9B4/3A2F28"
-							}
+							src={item.coverImageUrl ?? BOOK_COVER_PLACEHOLDER}
 							alt={item.title}
 							className={styles.cover}
 						/>
